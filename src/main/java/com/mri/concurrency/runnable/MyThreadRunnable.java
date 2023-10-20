@@ -1,9 +1,8 @@
-package com.mri.concurrency.thread;
+package com.mri.concurrency.runnable;
 
 import com.mri.concurrency.util.CommonUtil;
 
-public class ExtendedThread extends Thread{
-
+public class MyThreadRunnable implements Runnable{
     @Override
     public void run() {
         String currentThreadName = Thread.currentThread().getName();

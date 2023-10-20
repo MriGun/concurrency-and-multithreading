@@ -1,12 +1,13 @@
-package com.mri.concurrency.thread;
+package com.mri.concurrency.runnable;
 
 import com.mri.concurrency.util.CommonUtil;
 
-public class ExtendedThreadDemo {
+public class RunnableThreadDemo {
     public static void main(String[] args) {
-        ExtendedThread extendedThread = new ExtendedThread();
-        extendedThread.setName("Extended Thread");
-        extendedThread.start();
+        MyThreadRunnable myThreadRunnable = new MyThreadRunnable();
+        Thread thread = new Thread(myThreadRunnable);
+        thread.setName("Runnable thread");
+        thread.start();
 
         for (int i =0; i<5; i++) {
             System.out.println("[" + i + "] inside " + Thread.currentThread().getName());
