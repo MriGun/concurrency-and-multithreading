@@ -12,7 +12,7 @@ public class WatchDemo implements Runnable{
             CommonUtil.sleepOneSecond();
 
             if (Thread.interrupted()) {
-                System.out.println("Thread is interuppted!");
+                System.out.println("Thread is interupted!");
                 return;
             }
         }
