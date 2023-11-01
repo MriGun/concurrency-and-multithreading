@@ -15,6 +15,15 @@ public class CommonUtil {
         }
     }
 
+    public static void sleep() {
+        try {
+            Thread.sleep(1);
+        }
+        catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
     public static void printCurrentTime() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:s a");
         String formattedCurrentTime = LocalDateTime.now().format(formatter);
