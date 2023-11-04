@@ -14,7 +14,13 @@ public class DiningPhilosopherMain {
             Fork leftFork = forks[i];
             Fork rightFork = forks[(i+1) % forks.length];
 
-            philosophers[i] = new Philosopher("Philosopher " + (i + 1), leftFork, rightFork);
+            //to remove deadlock situation
+            if (i == philosophers.length - 1) {
+                philosophers[i] = new Philosopher("Philosopher " + (i + 1), rightFork, leftFork);
+            }
+            else {
+                philosophers[i] = new Philosopher("Philosopher " + (i + 1), leftFork, rightFork);
+            }
 
             philosophers[i].start();
         }
