@@ -29,4 +29,11 @@ public class CommonUtil {
         String formattedCurrentTime = LocalDateTime.now().format(formatter);
         System.out.println(formattedCurrentTime);
     }
+
+    public static void log(String msg) {
+        LocalDateTime now = LocalDateTime.now();
+        String time = DateTimeFormatter.ISO_LOCAL_TIME.format(now);
+        String threadName = Thread.currentThread().getName();
+        System.out.printf("%12s %s : %s%n", time, threadName, msg);
+    }
 }
