@@ -9,7 +9,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.util.concurrent.CountDownLatch;
 
-public class DownloadTask implements Runnable{
+public class DownloadTask implements Runnable {
 
     private URL downloadUrl;
     private long startByte;
@@ -18,9 +18,10 @@ public class DownloadTask implements Runnable{
     private String downloadDir;
     private CountDownLatch countDownLatch;
 
-    private DownloadTask(URL downloadUrl, long startByte, String partName, String downloadDir, CountDownLatch countDownLatch) {
+    public DownloadTask(URL downloadUrl, long startByte, long partSize, String partName, String downloadDir, CountDownLatch countDownLatch) {
         this.downloadUrl = downloadUrl;
         this.startByte = startByte;
+        this.partSize = partSize;
         this.partName = partName;
         this.downloadDir = downloadDir;
         this.countDownLatch = countDownLatch;
