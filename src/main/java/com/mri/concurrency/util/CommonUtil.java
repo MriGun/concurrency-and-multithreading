@@ -15,6 +15,15 @@ public class CommonUtil {
         }
     }
 
+    public static void delayMin(int min) {
+        try {
+            TimeUnit.MINUTES.sleep(min);
+        }
+        catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
     public static void sleep() {
         try {
             Thread.sleep(1);
